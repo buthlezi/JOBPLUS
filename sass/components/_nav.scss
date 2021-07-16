@@ -1,0 +1,123 @@
+.nav {
+  display: grid;
+  //grid-template-columns: 1fr 1fr 1fr;
+  // used to illustrate grid structure
+  grid-template-columns: min-content 1fr min-content;
+  // grid-template-rows: 1fr 1fr;
+  // min-content makes more sense
+  //grid-template-rows: min-content min-content;
+  // a better way of writing the above code
+  grid-template-rows: repeat(2, min-content);
+
+  background-color: var(--alpha);
+
+  &__lblock {
+    grid-row: 1 / 2;
+    // block co-ordinates for 1st row
+    grid-column: 1 / 2;
+    // block co-ordinates for 1st column
+
+    display: flex;
+    // puts elements on same line
+    align-items: center;
+    // center alignment in grid box
+    padding: 12rem;
+    // spacing - on both sides ?
+  }
+
+  &__icons {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+
+    display: flex;
+    align-items: center;
+    padding: 12rem;
+    li {
+      margin-left: 20rem;
+    }
+  }
+
+  &__dropl {
+    grid-row: 2 / 3;
+    // second row
+    grid-column: 1 / -1;
+    // or grid-column: 1 / 4
+    // occupies columns 1/2, 2/3 and 3/4
+    // in the second row
+    // using 1 / -1  provides more flexibility
+
+    background-color: var(--light);
+    // this is hidden by default
+    // commenting out the 'display: none;' line
+    // will reveal this light color
+    display: none;
+  }
+
+  &__hamburger {
+    margin-right: 10rem;
+  }
+
+  &__logo {
+    color: var(--delta);
+    font-weight: bold;
+  }
+
+  &__savedcount {
+    position: absolute;
+    padding: 2rem 6rem 3rem 6rem;
+    // padding top right bottom left
+    border-radius: 50%;
+    background-color: var(--alert);
+    color: var(--delta);
+    border: 1px var(--delta) solid;
+    font-size: 10rem;
+    font-weight: bold;
+    display: inline-block;
+    // no effect
+    transform: translate(-5rem, -10rem);
+    // x and y co-ordinates
+  }
+
+  &__toggle:checked ~ &__dropl {
+    display: block;
+    li {
+      padding: 15rem 10rem;
+      border-bottom: 1px var(--delta) solid;
+    }
+    // end of cellular layout
+  }
+
+  // responsive layout for 'small' and above
+  @include respond-to("small") {
+    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    // used to display elements initially - a test layout
+    grid-template-columns: 1fr min-content minmax(590rem, auto) min-content 1fr;
+    &__lblock {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
+      // grid-column 1 / 2 reserved for 1fr above
+    }
+
+    &__dropl {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
+
+      display: flex; // makes drop list visible, floats items/elements
+      align-items: center;
+      background-color: var(--alpha);
+      color: var(--delta);
+      li {
+        margin-left: 20rem;
+      }
+    }
+
+    &__icons {
+      grid-row: 1 / 2;
+      grid-column: 4 / 5;
+    }
+
+    &__hamburger {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+// VARIABLES folder
+@import "variables/colors.scss";
+
+//UTILITIES folder - these can be used
+// by the sass files in RESETS and COMPS
+@import "utilities/fonts.scss";
+
+// RESETS folder
+@import "resets/normalize.scss";
+@import "resets/reset.local.scss";
+@import "resets/responsive.scss";
+@import "resets/typography.scss";
+@import "resets/placeholder.scss";
+
+// COMPONENTS folder
+@import "components/nav.scss";
+@import "components/hero.scss";
+@import "components/form.scss";
+@import "components/container.scss";
+@import "components/sector.scss";
+@import "components/footer.scss";
+@import "components/cookie.scss";
+@import "components/listings.scss";
+@import "components/filter.scss";
+@import "components/paginate.scss";
