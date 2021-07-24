@@ -1,8 +1,13 @@
 # JOBPLUS
 Jobplus Recruitment Project
-1. Create 'JOBPLUS' folder
-2. Create 'css' , 'images' and 'sass' folders within 'JOBPLUS' folder
-3. Create 'components', 'resets' and 'variables' folders within 'sass' folder
-4. Create 'main.css' file in 'sass' folder
-5. Open VSCode within 'JOBPLUS' folder
-6. Open the 'resets' folder
+Launch Instructions
+1. Change to 'JOBPLUS' directory.
+2. Launch VSCode
+3. Install 'Live Server' extension
+4. Click 'Go Live' at the bottom of VSCode
+5. This will launch the homepage of the JOBPLUS app
+6. You will be presented with a demo version
+7. The navigation buttons on the men bar will take you to 'Job Search', 'Notifications', 'Saved Jobs', 'Profile' ,'Login'
+Clicking on 'JOBPLUS' will also tahe you to the homepage from any of these pages. 
+On a mobile device, the hamburger icon will also give options like 'Home', 'Job listing' and 'Job applications'
+On a desktop or laptop, these options are displayed in the menu bar
